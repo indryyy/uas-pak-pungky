@@ -12,18 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kota', function (Blueprint $table) {
-            $table->increments('id_kota')->primary();
-            $table->string(
-                'nama_kota',
-                15
-            );
-            $table->string('nama_pemimpin',20);
+            $table->increments('id_kota'); 
+            $table->string('nama_kota', 15);
+            $table->string('nama_pemimpin', 20);
             $table->date('tanggal_berdiri');
             $table->integer('jumlah_penduduk');
             $table->float('luas_wilayah');
             $table->enum('status', ['istimawa', 'otonom', 'percontohan']);
             $table->text('keunggulan');
-            $table->timestamps();        });
+            $table->timestamps();    
+        });
     }
 
     /**
